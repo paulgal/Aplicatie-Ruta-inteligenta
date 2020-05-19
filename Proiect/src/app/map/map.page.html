@@ -1,0 +1,22 @@
+<ion-header>
+<ion-toolbar color="primary">
+    <ion-title>Harta</ion-title>
+  </ion-toolbar>
+</ion-header>	
+
+<ion-content>  
+    <form [formGroup]="directionForm" (ngSubmit)="calculateAndDisplayRoute(directionForm.value)">
+        <ion-item>
+          <ion-label position="floating">Destinatie</ion-label>
+          <ion-input formControlName="destination"></ion-input>
+        </ion-item>
+        <ion-button expand="full" type="submit" [disabled]="!directionForm.valid">Gaseste Ruta
+
+        </ion-button>
+        <ion-button expand="full" type="submit" (click)="logout()">Log out
+
+          </ion-button>
+      </form>
+  <div #mapElement class="map"></div>
+</ion-content>
+
